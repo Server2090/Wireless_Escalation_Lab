@@ -2,15 +2,25 @@
 
 #setting up the basic variables
 SSID="ECC-GUEST"
-ROUTER_URL="http://192.168.1.1"
+ROUTER_IP="192.168.1.1"
+ROUTER_URL="http://$ROUTER_IP"
 BROWSER="firefox-esr"
 ADMIN_USER=""
 ADMIN_PASS="AdminSecure123!"
 BROWSER_START_DELAY=20	#how long to wait for the browser to load
-SLEEP_TIME=60	#how long to sleep before next attempt
+SLEEP_TIME=300	#how long to sleep before next attempt
 LOGIN_SLEEP_TIME=10
 LOOP_SLEEP=100
 BROWSER_CREATION_SLEEP=20
+
+#background traffic generator of ping every 5 seconds
+echo "Staring background network traffic to $ROUTER_IP..."
+ping -i 5 "$ROUTER_IP" >/dev/null 2>&1 &
+PING_PID=$!
+
+#makes sures that traffic generator stops
+trap 'kill $PING_PID 2>/dev/null; echo -e "\nStopped background traffic."' EXIT INT TERM
+
 
 while true; do
   # checks to make sure the right SSID is in use

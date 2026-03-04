@@ -7,7 +7,7 @@ Wants=network-online.target
 Type=simple
 ExecStart=/usr/local/lib/router_autologin/router_autologin.sh
 Restart=always
-User=recon
+User=$username$
 Environment=DISPLAY=:0
 Environment=XAUTHORITY=/home/$username/.Xauthority
 
