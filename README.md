@@ -27,7 +27,7 @@
   <p align="center">
     The Wireless Escalation Lab is a hands on offensive security exercise where simulate a red team assessment against a small enterprise Wi-Fi environment using only laptops, two consumer routers, and a Wi-Fi Pineapple. Students first compromise a vulnerable WPA2 Guest Wi-Fi network by capturing and cracking a WPA2 handshake with a password found in a wordlist. Then students deploy an evil twin access point to phish router administration credentials from a scripted employee laptop accessing the router admin webpage over the Guest network. Using these stolen credentials from the Guest network, they must log into the router, misconfigure the port forward rules to pivot into an internal Corp network hosting a simple intranet web service that exposes a flag. This lab is designed for high school or introductory college cybersecurity students and emphasizes realistic wireless attack chaining including recon, WPA2 cracking, evil twin, credential harvesting, network sniffing, segmentation bypass, all in a controlled single room environment. 
     <br />
-    <a href="[https://github.com/Server2090/Wireless_Escalation_Lab](https://github.com/Server2090/Wireless_Escalation_Lab#getting-started)"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/Server2090/Wireless_Escalation_Lab#getting-started"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/Server2090/Wireless_Escalation_Lab/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
