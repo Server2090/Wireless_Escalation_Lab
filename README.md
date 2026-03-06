@@ -63,7 +63,7 @@
 			<ul>
 				<li><a href="#stage-1-crack-ecc-guest-psk">Stage 1 Crack ECC-GUEST PSK</a></li>
 				<li><a href="#stage-2-evil-twin-dns-spoof">Stage 2: Evil Twin + DNS Spoof</a></li>
-				<li><a href="#stage-3-guest-corp-escalation">Stage 3 Guest → Corp Escalation</a></li>
+				<li><a href="#stage-3-guest--corp-escalation">Stage 3 Guest → Corp Escalation</a></li>
 			</ul>
       </ul>
     </li>
@@ -286,7 +286,7 @@ sudo python3 -m http.server 80 bind 0.0.0.0
 ---
 1. [Stage 1 Crack ECC-GUEST PSK](#stage-1-crack-ecc-guest-psk)
 2. [Stage 2: Evil Twin + DNS Spoof](#stage-2-evil-twin-dns-spoof)
-3. [Stage 3 Guest → Corp Escalation](#stage-3-guest-corp-escalation)
+3. [Stage 3 Guest → Corp Escalation](#stage-3-guest--corp-escalation)
 
 <p align="right">[<a href="#readme-top">Back to Top</a>]</p>
 
