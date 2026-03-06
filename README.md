@@ -19,10 +19,10 @@
 <!-- PROJECT LOGO -->
 <div align="center">
   <a href="https://github.com/Server2090/Wireless_Escalation_Lab">
-    <img src="images/wireless_logo.png" alt="Logo" width="500" height="150">
+    <img src="images/wireless_logo.png" alt="Logo" width="700" height="150">
   </a>
 
-<h3 align="center">Wireless Escalation Lab</h3>
+<h1 align="center">Wireless Escalation Lab</h1>
 
   <p align="center">
     The Wireless Escalation Lab is a hands on offensive security exercise where simulate a red team assessment against a small enterprise Wi-Fi environment using only laptops, two consumer routers, and a Wi-Fi Pineapple. Students first compromise a vulnerable WPA2 Guest Wi-Fi network by capturing and cracking a WPA2 handshake with a password found in a wordlist. Then students deploy an evil twin access point to phish router administration credentials from a scripted employee laptop accessing the router admin webpage over the Guest network. Using these stolen credentials from the Guest network, they must log into the router, misconfigure the port forward rules to pivot into an internal Corp network hosting a simple intranet web service that exposes a flag. This lab is designed for high school or introductory college cybersecurity students and emphasizes realistic wireless attack chaining including recon, WPA2 cracking, evil twin, credential harvesting, network sniffing, segmentation bypass, all in a controlled single room environment. 
@@ -42,7 +42,7 @@
 
 <!-- TABLE OF CONTENTS -->
 <details>
-  <summary>Table of Contents</summary>
+  <summary style="font-size: 20px;">Table of Contents</summary>
   <ol>
     <li>
       <a href="#about-the-project">About The Project</a>
@@ -53,24 +53,24 @@
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
 	        <ul>
-			    <li><a href="#Guest Router (ECC-GUEST) Initial Configuration (Simulated Employee Laptop) ">Guest Router (ECC-GUEST) Initial Configuration (Simulated Employee Laptop</a></li>
-			    <li><a href="#Corp Router (ECC-CORP) Initial Configuration (Simulated Employee Laptop)">Corp Router (ECC-CORP) Initial Configuration (Simulated Employee Laptop)</a></li>
-			    <li><a href="#WiFi Pineapple Setup (Attacker Laptop)">WiFi Pineapple Setup (Attacker Laptop)</a></li>
-			    <li><a href="#Simulated Employee Laptop">Simulated Employee Laptop</a></li>
-			    <li><a href="#Corp Intranet Server Setup (Intranet Device)">Corp Intranet Server Setup (Intranet Device)</a></li>
+			    <li><a href="#guest-router-ecc-guest-initial-configuration-simulated-employee-laptop ">Guest Router (ECC-GUEST) Initial Configuration (Simulated Employee Laptop</a></li>
+			    <li><a href="#corp-router-ecc-corp-initial-configuration-simulated-employee-laptop">Corp Router (ECC-CORP) Initial Configuration (Simulated Employee Laptop)</a></li>
+			    <li><a href="#wifi-pineapple-setup-attacker-laptop">WiFi Pineapple Setup (Attacker Laptop)</a></li>
+			    <li><a href="#simulated-employee-laptop">Simulated Employee Laptop</a></li>
+			    <li><a href="#corp-intranet-server-setup-intranet-device">Corp Intranet Server Setup (Intranet Device)</a></li>
 		    </ul>
 		<li><a href="#solution">Solution</a></li>
 			<ul>
-				<li><a href="#Stage 1 Crack ECC-GUEST PSK">Stage 1 Crack ECC-GUEST PSK</a></li>
-				<li><a href="#Stage 2: Evil Twin + DNS Spoof">Stage 2: Evil Twin + DNS Spoof</a></li>
-				<li><a href="#Stage 3 Guest → Corp Escalation">Stage 3 Guest → Corp Escalation</a></li>
+				<li><a href="#stage-1-crack-ecc-guest-psk">Stage 1 Crack ECC-GUEST PSK</a></li>
+				<li><a href="#stage-2-evil-twin-dns-spoof">Stage 2: Evil Twin + DNS Spoof</a></li>
+				<li><a href="#stage-3-guest-corp-escalation">Stage 3 Guest → Corp Escalation</a></li>
 			</ul>
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#Top Contributors">Top Contributors</a></li>
+    <li><a href="#top-contributors">Top Contributors</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
@@ -88,7 +88,7 @@ The Wireless Escalation Lab is a hands on offensive security exercise where simu
 ## Getting Started
 
 ### Prerequisites
-
+=======
 **Networking Hardware**
 * 2 Linksys WRT54G Routers with stock firmware
 * 1 Wi-Fi Pineapple
@@ -105,15 +105,17 @@ The Wireless Escalation Lab is a hands on offensive security exercise where simu
 <p align="right">[<a href="#readme-top">Back to Top</a>]</p>
 
 ### Installation
-1. Complete the [[#Guest Router (ECC-GUEST) Initial Configuration (Simulated Employee Laptop)]] section
-2. Complete the [[#Corp Router (ECC-CORP) Initial Configuration (Simulated Employee Laptop)]] section
-3. Complete the [[#WiFi Pineapple Setup (Attacker Laptop)]]
-4. Complete the [[#Simulated Employee Laptop]] section
-5. Complete the [[#Corp Intranet Server Setup (Intranet Device)]] section
+=======
+1. Complete the [Guest Router (ECC-GUEST) Initial Configuration (Simulated Employee Laptop section](#guest-router-ecc-guest-initial-configuration-simulated-employee-laptop)
+2. Complete the [Corp Router (ECC-CORP) Initial Configuration (Simulated Employee Laptop)](#corp-router-ecc-corp-initial-configuration-simulated-employee-laptop) section
+3. Complete the [WiFi Pineapple Setup (Attacker Laptop)](#wifi-pineapple-setup-attacker-laptop)
+4. Complete the [Simulated Employee Laptop](#simulated-employee-laptop) section
+5. Complete the [Corp Intranet Server Setup (Intranet Device)](#corp-intranet-server-setup-intranet-device) section
 
 <p align="right">[<a href="#readme-top">Back to Top</a>]</p>
 
 #### Guest Router (ECC-GUEST) Initial Configuration (Simulated Employee Laptop)
+=======
 1. **Factory reset the router**
 	- Hold the physical reset button for 30 seconds until the default linksys wireless network appears
 	- Temporarily set the laptop to a static IP in the same subnet (for example `192.168.1.5/24`)
@@ -163,6 +165,7 @@ The Wireless Escalation Lab is a hands on offensive security exercise where simu
 <p align="right">[<a href="#readme-top">Back to Top</a>]</p>
 
 #### Corp Router (ECC-CORP) Initial Configuration (Simulated Employee Laptop)
+=======
 1. **Factory reset the router**
 	- Hold the physical reset button for 30 seconds until the default linksys wireless network appears
 	- Temporarily set the laptop to a static IP in the same subnet (for example `192.168.1.5/24`)
@@ -204,6 +207,7 @@ The Wireless Escalation Lab is a hands on offensive security exercise where simu
 <p align="right">[<a href="#readme-top">Back to Top</a>]</p>
 
 #### WiFi Pineapple Setup (Attacker Laptop)
+=======
  1. **Connect the Pineapple to the laptop**
 	- Use wired USB-C connection to connect the WiFi Pineapple to the laptop
 2. **Connect to WiFi Pineapple**
@@ -216,6 +220,7 @@ The Wireless Escalation Lab is a hands on offensive security exercise where simu
 <p align="right">[<a href="#readme-top">Back to Top</a>]</p>
 
 #### Simulated Employee Laptop
+=======
 1. Clone the repo
 ```sh
 git clone https://github.com/Server2090/Wireless_Escalation_Lab.git
@@ -257,6 +262,7 @@ sudo systemctl start router_autologin.service
 <p align="right">[<a href="#readme-top">Back to Top</a>]</p>
 
 #### Corp Intranet Server Setup (Intranet Device)
+=======
 1. Install Python3
 ```sh
 sudo apt update
@@ -275,14 +281,15 @@ sudo python3 -m http.server 80 bind 0.0.0.0
 <p align="right">[<a href="#readme-top">Back to Top</a>]</p>
 
 ### Solution
-1. [[#Stage 1 Crack ECC-GUEST PSK]]
-2. [[#Stage 2: Evil Twin + DNS Spoof]]
-3. [[#Stage 3 Guest → Corp Escalation]]
+=======
+1. [Stage 1 Crack ECC-GUEST PSK](#stage-1-crack-ecc-guest-psk)
+2. [Stage 2: Evil Twin + DNS Spoof](#stage-2-evil-twin-dns-spoof)
+3. [Stage 3 Guest → Corp Escalation](#stage-3-guest-corp-escalation)
 
 <p align="right">[<a href="#readme-top">Back to Top</a>]</p>
 
 #### Stage 1: Crack ECC-GUEST PSK
-
+=======
 1. Start airodump-ng
 ```sh
 sudo airmon-ng check kill
@@ -320,6 +327,7 @@ sudo aircrack-ng -w ${WORDLIST} ${CAPTURE_FILE}
 
 <p align="right">[<a href="#readme-top">Back to Top</a>]</p>
 #### Stage 2: Evil Twin + DNS Spoof
+=======
 1. Shutdown Promiscuous Mode
 ```sh
 sudo airmon-ng stop wlan0mon
@@ -343,6 +351,7 @@ sudo systemctl restart NetworkManager
 <p align="right">[<a href="#readme-top">Back to Top</a>]</p>
 
 #### Stage 3: Guest → Corp Escalation
+=======
 1. Using Credentials Gathered, Login to ECC-GUEST Router
 2. Modify Firewall Rule to Allow Access to ECC-CORP network
 3. Ping ECC-CORP Network Resources
@@ -356,11 +365,10 @@ curl http://192.168.2.1:80/index.html
 
 <p align="right">[<a href="#readme-top">Back to Top</a>]</p>
 
-<!-- USAGE EXAMPLES -->
 ## Usage
 
-##### Attack Flow (3 Stages, Both Cracking + Evil Twin Required)
-
+### Attack Flow (3 Stages, Both Cracking + Evil Twin Required)
+=======
 **Stage 1: Crack ECC-GUEST PSK**
 Deauth victim → capture handshake → crack PSK → Flag 1 (crack screenshot).
 
@@ -371,7 +379,7 @@ Hak5 evil twin (same SSID/PSK, stronger signal) → deauth victim → auto-joins
 Join real ECC-GUEST (cracked PSK) → login real router (phished creds) → modify firewall → reach corp resources → Flag 3.
 
 <p align="right">[<a href="#readme-top">Back to Top</a>]</p>
-<!-- ROADMAP -->
+
 ## Roadmap
 
 - [ ] Short Term
@@ -407,7 +415,7 @@ If you have a suggestion that would make this better, please fork the repo and c
 <p align="right">[<a href="#readme-top">Back to Top</a>]</p>
 
 ### Top contributors:
-
+=======
 <a href="https://github.com/Server2090/Wireless_Escalation_Lab/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=Server2090/Wireless_Escalation_Lab" alt="contrib.rocks image" />
 </a>
@@ -421,7 +429,6 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <p align="right">[<a href="#readme-top">Back to Top</a>]</p>
 
-<!-- CONTACT -->
 ## Contact
 
 Mintas Ivaska - [LinkedIn](https://linkedin.com/in/mintas-ivaska) - ivaska.mintas@gmail.com
