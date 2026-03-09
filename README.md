@@ -143,7 +143,7 @@ The Wireless Escalation Lab is a hands on offensive security exercise where simu
 5. **Wireless Security (Wireless → Wireless Security)**
 	- Security Mode: **WPA2 Personal**
 	- Encryption: **AES**
-	- WPA Shared Key: `corpwirelessnetwork`
+	- WPA Shared Key: `Backstreet`
 6. **Access Restrictions (Access Restrictions → Internet Access)**
 	- Status: **Enable**
 	- Enter Policy Name: **Blocking Internet All Time**
@@ -300,10 +300,10 @@ sudo airodump-ng "${INTERFACE}mon"
 ```
 2. Use airodump-ng to View Connected Devices
 ```sh
-sudo airmon-ng -c ${CHANNEL} --bssid ${ROUTER_MAC} "${INTERFACE}mon" 
+sudo airodump-ng -c ${CHANNEL} --bssid ${ROUTER_MAC} "${INTERFACE}mon" 
 #note the STATION_MAC and do deauth attack based on STATION_MAC
 #kill airmon-ng with CTRL+C to copy MAC and then restart it with the command below
-sudo airmon-ng -c ${CHANNEL} --bssid ${ROUTER_MAC} -w output "${INTERFACE}mon" 
+sudo airodump-ng -c ${CHANNEL} --bssid ${ROUTER_MAC} -w output "${INTERFACE}mon" 
 ```
 3. Initialize Wireshark
 ```sh
